@@ -1,0 +1,10 @@
+CREATE DATABASE iot_devices_db
+
+CREATE TABLE `iot_devices_db`.`iot_devices` (
+  `id` BINARY(16) NOT NULL,
+  `name` VARCHAR(100) NULL,
+  `status` ENUM('ONLINE', 'OFFLINE', 'ERROR') NULL,
+  `last_seen` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `metadata` JSON NULL,
+  PRIMARY KEY (`id`))
+COMMENT = 'table holding iot devices information';
